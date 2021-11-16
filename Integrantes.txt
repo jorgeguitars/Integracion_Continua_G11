@@ -1,7 +1,7 @@
-
+Proyecto tienda virtual de articulos deportivos para ciclismo
 
 integrantes:
 Jorge alexander Mora Ruiz
 Hector David Cuitiva Quintero
 Dirlelly Lorena Monroy
-Diana Carolina Parra 
+Diana Carolina Parra Mejia 
