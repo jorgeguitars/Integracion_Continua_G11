@@ -1,4 +1,6 @@
 language: node_js
-rvm:
- - 12-alpine
+node_js:
+ - 12.22.7
+cache : yarn
+
 
