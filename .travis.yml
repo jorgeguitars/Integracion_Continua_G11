@@ -2,26 +2,9 @@
 language: node_js
 node_js: 12
 
-env:
-  global:
-    - PATH=/snap/bin:$PATH
-    - PERCY_ENABLE=0
-    - JOBS=1
-    # See https://git.io/vdao3 for details.
-
-os: linux
-dist: xenial
-
-addons:
-  - chrome: stable
-
-cache:
-  npm: true
-
+services:
+  - docker
+  - mysql
 before_install:
-  - npm config set spin false
-
-
-install:
-  - npm ci
-
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS todos;'
+  - cd app
