@@ -1,13 +1,11 @@
-language: node
-rvm:
- - 12-alpine
-
-language: generic
+language: node_js
 
 services:
   - docker
 
 before_install:
-  - docker build -t alpine-node-onbuild .
-  - docker build -t alpine-node-onbuild-test tests/
-  - docker run -d --name alpine-node-onbuild-test alpine-node-onbuild-test
+- docker ps -a
+
+
+script:
+- bundle exec rake test
