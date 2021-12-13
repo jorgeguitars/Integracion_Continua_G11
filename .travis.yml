@@ -1,32 +1,14 @@
-{
-  "language": "node_js",
-  "os": [
-    "linux"
-  ],
-  "dist": "xenial",
-  "node_js": [
-    "stable"
-  ],
-  "cache": {
-    "directories": [
-      "node_modules"
-    ]
-  },
-  "script": [
-    "npm run build"
-  ],
-  "deploy": [
-    {
-      "provider": "pages",
-      "strategy": "git",
-      "skip_cleanup": true,
-      "local_dir": "build",
-      "on": {
-        "branch": [
-          "main"
-        ]
-      },
-      "token": "$Github_token"
-    }
-  ]
-}
+language: node_js
+
+services:
+  - docker
+
+before_install:
+- docker ps -a
+
+
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
