@@ -1,17 +1,27 @@
-language: node_js
-node_js:
--"12"
 
-services:
-  - docker
-  - mysql
+language: node_js
+node_js: 12
+
+env:
+  global:
+    - PATH=/snap/bin:$PATH
+    - PERCY_ENABLE=0
+    - JOBS=1
+    # See https://git.io/vdao3 for details.
+
+os: linux
+dist: xenial
+
+addons:
+  - chrome: stable
+
+cache:
+  npm: true
 
 before_install:
-- docker ps -a
+  - npm config set spin false
 
 
-node_js:
-  - "stable"
-cache:
-  directories:
-  - node_modules
+install:
+  - npm ci
+
