@@ -1,10 +1,13 @@
-language: node_js
-node_js:
- - 12.22.7
- 
+language: node
+rvm:
+ - 12-alpine
+
+language: generic
+
 services:
   - docker
-  - mysql
 
-  script: 
-      - cd app
+before_install:
+  - docker build -t alpine-node-onbuild .
+  - docker build -t alpine-node-onbuild-test tests/
+  - docker run -d --name alpine-node-onbuild-test alpine-node-onbuild-test
