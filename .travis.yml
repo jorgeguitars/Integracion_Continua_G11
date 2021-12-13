@@ -3,11 +3,10 @@ node_js:
  - 12.22.7
 cache : npm
 
- before_install:
- install:
- before_script:
- after_failure:
-
-
-
-
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: main
