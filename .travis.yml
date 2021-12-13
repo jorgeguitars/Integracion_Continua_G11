@@ -3,14 +3,6 @@ node_js:
  - 12.22.7
 cache : yarn
 
-services:
--docker
--mysql
-
-install:
-  -docker-compose up 
-  -docker start
-
 
 
 
