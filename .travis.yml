@@ -1,5 +1,7 @@
 language: node_js
 node_js:
- - node
-cache : npm
+ - 12.22.7
 
+install:
+-docker compose up 
+script:
