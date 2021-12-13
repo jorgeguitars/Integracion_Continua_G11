@@ -4,4 +4,9 @@ node_js:
 
 install:
 -docker compose up 
-script:
+services:
+  - docker
+  - mysql
+
+  script: 
+      - cd app
