@@ -8,8 +8,8 @@ services:
 -mysql
 
 install:
-  -yarn test
-  -yarn run build
+  -docker-compose up 
+  -docker start
 
   deploy:
     provider: pages
